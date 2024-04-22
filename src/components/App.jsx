@@ -6,13 +6,15 @@ import notes from "../notes";
 
 // console.log(notes); to check if the notes from notes is passed or not
 
-function createNote(noteItem) {
-  return <Note 
-      key = {noteItem.key}
-      title = {noteItem.title}
-      content = {noteItem.content}
-  />
-}
+//create arrow function to mive this function inside
+//  {notes.map(createNote)}
+// function createNote(noteItem) {
+//   return <Note 
+//       key = {noteItem.key}
+//       title = {noteItem.title}
+//       content = {noteItem.content}
+//   />
+// }
 
 function App() {
   return (
@@ -26,7 +28,12 @@ function App() {
         content="This is the note content"
         create map function here
         abd pass the notrItem function here */}
-        {notes.map(createNote)}
+        {notes.map( (noteItem) => <Note 
+      key = {noteItem.key}
+      title = {noteItem.title}
+      content = {noteItem.content}
+  />
+)}
       
       <Footer />
     </div>
